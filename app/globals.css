@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+  }
+}
+
+body {
+  background-color: rgb(21, 21, 21);
+  color: white;
+}
+
+h1 {
+  font-size: 14pt;
+  font-weight: 600;
+  margin-top: 100px;
+  text-align: center;
+}
+
+p {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.claim {
+  font-size: 30pt;
+  font-weight: 500;
+  background: -webkit-linear-gradient(45deg, #ff5858, #ffb22d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
