@@ -7,7 +7,7 @@ import { useCollection } from "react-firebase-hooks/firestore";
 export default function users() {
   return (
     <>
-      <div className="h-full">This is the hub for all users!</div>
+      <div className="h-full">Users</div>
     </>
   );
 }

@@ -13,6 +13,7 @@
 body {
   background-color: rgb(21, 21, 21);
   color: white;
+  margin: 30px;
 }
 
 h1 {
@@ -33,4 +34,63 @@ p {
   background: -webkit-linear-gradient(45deg, #ff5858, #ffb22d);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+button {
+  background-color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 20px 0px;
+  font-size: 14px;
+  font-weight: 500;
+  background-image: linear-gradient(
+    35deg,
+    rgb(21, 111, 255),
+    rgb(145, 27, 255)
+  );
+}
+
+footer {
+  font-size: 12px;
+  margin-top: 200px;
+  color: rgb(87, 87, 87);
+  width: 100%;
+}
+.app-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+}
+
+code {
+  color: grey;
+  font-size: 12px;
+}
+
+.flex {
+  align-items: center;
+}
+
+input {
+  margin: 0px 5px;
+  background-color: transparent;
+  color: white;
+  border: 1.5px solid rgba(255, 255, 255, 0.422);
+  border-radius: 5px;
+  padding: 4px 5px;
+  outline: none;
+}
+
+.gradient {
+  background: -webkit-linear-gradient(
+    35deg,
+    rgb(21, 111, 255),
+    rgb(145, 27, 255)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.spacer {
+  margin-top: 50px;
 }

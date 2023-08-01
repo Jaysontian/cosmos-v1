@@ -25,32 +25,31 @@ export default function onboard() {
   if (session && session.user) {
     return (
       <>
-        <div className="flex flex-col align-left w-auto left items-start pl-24 pt-24">
-          <h1 className="text-3xl font-medium pb-20">
-            Welcome, {session.user.name}. {session.user.id}
-          </h1>
-          <h2 className="pb-5">Claim your nebulo link below</h2>
-          <div className="flex flex-row content-center color-black">
-            <p className="claim self-center m-0">nebulo.me/</p>
-            <input
-              type="text"
-              value={value}
-              onChange={(e) => {
-                setValue(e.currentTarget.value);
-              }}
-              className="h-10 text-3xl self-center bg-transparent text-white rounded border-opacity-25 border-solid border-gray-50 border-2 px-4 py-6"
-            ></input>
-            <button
-              className="rounded self-center bg-gradient-to-r from-cyan-500 to-blue-500 w-10 h-10 mx-4 text-xl"
-              onClick={async () => {
-                await submitlink(session, value);
-                router.push(`/u/${value}`);
-              }}
-            >
-              -{`>`}
-            </button>
+        <div>Welcome, {session.user.name}</div>
+        <code>{session.user.id}</code>
+        <div className="spacer"></div>
+        <div className="mb-5">Claim your personal link</div>
+        <div className="flex">
+          <div>
+            <p className="gradient m-0 font-semibold text-3xl">nebulo.me/</p>
           </div>
+          <input
+            type="text"
+            value={value}
+            onChange={(e) => {
+              setValue(e.currentTarget.value);
+            }}
+            className="font-medium text-xl"
+          ></input>
         </div>
+        <button
+          onClick={async () => {
+            await submitlink(session, value);
+            router.push(`/u/${value}`);
+          }}
+        >
+          Claim
+        </button>
       </>
     );
   }

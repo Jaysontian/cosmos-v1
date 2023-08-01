@@ -1,7 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-
 import Providers from "./signin/Providers";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -20,6 +19,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Providers>{children}</Providers>
+        <footer>
+          <div className="app-name">nebulo.me</div>
+          <div>version alpha 0.5 (unstable)</div>
+        </footer>
       </body>
     </html>
   );
