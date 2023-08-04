@@ -15,20 +15,17 @@ export default async function UserPage() {
   const headersList = headers();
   const pathname = headersList.get("x-invoke-path") || "";
   const username = pathname.slice(3);
+
+  // If user does not exist throw 404 error
   await getDoc(doc(db, "users", username)).then((doc) => {
-    if (!doc.exists()) {
-      console.log("NO EXIST");
-      notFound();
-    }
+    if (!doc.exists()) notFound();
   });
 
-  // Getting Auth
+  // useSession to grab logged in user ID then check if this is their page
   const session = await getServerSession(options);
   if (!session) return <Public />;
   const docRef = doc(db, "authID", session?.user.id);
-  const docSnap = await getDoc(docRef).catch(() => {
-    notFound();
-  });
+  const docSnap = await getDoc(docRef);
 
   if (docSnap.exists() && username == docSnap.data().username) {
     return (
