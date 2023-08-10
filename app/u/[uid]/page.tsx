@@ -2,6 +2,7 @@ import { db } from "../../../firebase/firestore";
 import { doc, getDoc } from "firebase/firestore";
 import { notFound } from "next/navigation";
 import Public from "./public";
+import Private from "./private";
 import { headers } from "next/headers";
 
 import SignOutButton from "@/app/signin/signOutButton";
@@ -9,6 +10,10 @@ import SignOutButton from "@/app/signin/signOutButton";
 // Session + Auth
 import { getServerSession } from "next-auth";
 import { options } from "@/app/api/auth/[...nextauth]/options";
+
+type Props = {
+  username: string;
+};
 
 export default async function UserPage() {
   // Getting URL Input for username
@@ -32,7 +37,7 @@ export default async function UserPage() {
       <>
         <div>You are editing your own page.</div>
         <SignOutButton />
-        <Public />
+        <Private username={username} />
       </>
     );
   } else {

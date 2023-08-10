@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 
 async function getData(pathname: string) {
+  // retrieve user's public facing data
   const docRef = doc(db, "users", pathname.slice(3));
   const docSnap = await getDoc(docRef);
   if (!docSnap.exists()) throw new Error("failed");

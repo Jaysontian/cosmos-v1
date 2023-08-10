@@ -1,6 +1,8 @@
 import type { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
+import SpotifyProvider from "next-auth/providers/spotify";
 import { GoogleProfile } from "next-auth/providers/google";
+import { SpotifyProfile } from "next-auth/providers/spotify";
 
 export const options: NextAuthOptions = {
   providers: [
@@ -15,6 +17,11 @@ export const options: NextAuthOptions = {
       clientId: process.env.GOOGLE_ID as string,
       clientSecret: process.env.GOOGLE_SECRET as string,
     }),
+    SpotifyProvider({
+      clientId: process.env.SPOTIFY_CLIENT_ID as string,
+      clientSecret: process.env.SPOTIFY_CLIENT_SECRET as string,
+    }),
+
     // ...add more providers here
   ],
   callbacks: {

@@ -29,7 +29,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "firebase/firestore.js",
-    "pages/api/[...nextauth].js"
+    "pages/api/[...nextauth].js",
+    "app/spotifyauth/page.js"
   ],
   "exclude": ["node_modules"]
 }

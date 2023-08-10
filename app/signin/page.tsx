@@ -27,11 +27,13 @@ export default async function signin() {
   const docSnap = await getDoc(docRef);
 
   if (docSnap.exists()) {
-    // if the user exists, then load their page
+    // if the user exists, then load their page:
+
     redirect(`/u/${docSnap.data().username}`);
     //console.log("Document data:", docSnap.data().username);
   } else {
     return (
+      // else, onboard the new user:
       <>
         <Onboard />
       </>
