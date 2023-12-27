@@ -1,34 +1,33 @@
-import { db } from "../../../firebase/firestore";
-import { doc, getDoc } from "firebase/firestore";
-import { usePathname } from "next/navigation";
-
-import { getServerSession } from "next-auth";
-import { options } from "@/app/api/auth/[...nextauth]/options";
 
 // Ccomponents
+// import { useState, useEffect } from 'react'
+
 import SpotifyButton from "@/app/signin/apps/spotifybutton";
+import { headers } from "next/headers";
 
-async function getData(pathname: string) {
-  const session = await getServerSession(options);
-  console.log(session);
+// async function getData(/*pathname: string*/) {
+//   const res = await fetch('http://localhost:3000/api/user/data', {
+//       method: "GET",
+//       headers: headers() // a server side component calling another API needs headers passed in
+//   });
 
-  // retrieve user's public facing data
-  const docRef = doc(db, "users", pathname);
-  const docSnap = await getDoc(docRef);
-  if (!docSnap.exists()) throw new Error("failed");
-  console.log("Success:", docSnap.data());
-  return docSnap.data();
-}
+//   if (res.ok) return await res.json();
+// }
 
-export default function Public(props: { username: string }) {
-  const data = getData(props.username);
+export default async function Public(props: { username: string }) {
+  // const [data, setData] = useState(null);
+  const res = await fetch('http://localhost:3000/api/user/data', {method: "GET", headers: headers()});
+  const data = await res.json();
 
   return (
     <div>
-      <h1>Edit: {data.name}</h1>
-      <p>Edit: {data.bio}</p>
-      <p>Spotify Data:</p>
-      <SpotifyButton />
+      <h1>{data.name} (Editable)</h1>
+      <p>{data.bio} (Editable)</p>
+      <h2>Spotify</h2>
+      { data.spotify_token == null ? 
+        <SpotifyButton /> : 
+        <h2>You have connected your spotify account.</h2>
+      }
     </div>
   );
 }

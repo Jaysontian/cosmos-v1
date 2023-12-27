@@ -31,6 +31,6 @@
     "firebase/firestore.js",
     "pages/api/[...nextauth].js",
     "app/spotifyauth/page.js"
-  ],
+, "app/api/auth/spotify/callback/route.js", "app/api/auth/spotify/callback/route.js", "app/api/auth/spotify/route.js", "app/api/auth/spotify/route.js"  ],
   "exclude": ["node_modules"]
 }

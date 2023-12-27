@@ -1,4 +1,4 @@
-// File: /Users/jaysontian/Code/nebulo-alpha-v1/app/u/[uid]/page.tsx
+// File: /Users/jaysontian/Git/nebulo-alpha-v1/app/u/[uid]/page.tsx
 import * as entry from '../../../../../app/u/[uid]/page.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
