@@ -10,7 +10,7 @@ export async function GET(request) {
     const client_id = process.env.SPOTIFY_CLIENT_ID; // Replace with your actual client_id
     const redirect_uri = 'http://localhost:3000/api/auth/spotify/callback';
     const state = (Math.random() + 1).toString(36).substring(7);
-    const scope = 'user-read-private user-read-email';
+    const scope = 'user-read-private user-read-email user-top-read';
 
     console.log("Redirect success");
 

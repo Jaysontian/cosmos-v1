@@ -1,0 +1,22 @@
+
+
+.note {
+    background-color:rgb(28, 28, 28);
+    border-radius:10px;
+    box-shadow:2px 2px 12px 4px rgba(0, 0, 0, 0.076);
+    max-width:400px;
+    margin:auto;
+    padding:20px 24px;
+}
+
+
+.note h1 {
+    margin-top: 0px;
+    text-align: left;
+}
+
+.note p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.717);
+    text-align:left;
+}

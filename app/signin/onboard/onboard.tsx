@@ -13,6 +13,7 @@ async function submitlink(session: any, val: string) {
   await setDoc(doc(db, "users", val), {
     name: session.user.name,
     bio: "Edit your bio here",
+    lib: []
   });
   return;
 }
