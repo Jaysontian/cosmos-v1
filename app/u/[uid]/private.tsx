@@ -33,7 +33,7 @@ export default async function Public(props: { username: string }) {
       <p>{data.bio} (Editable)</p>
       <br></br>
       <div>
-        <AddButton addServerItem={addItem} />
+        {/* <AddButton addServerItem={addItem} /> ISSUE WITH HANDLER */} 
       </div>
       <Library 
         items={data.lib}
