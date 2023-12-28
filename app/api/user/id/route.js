@@ -15,6 +15,6 @@ export async function GET() {
     }
     const docRef = doc(db, "authID", session?.user.id);
     const docSnap = await getDoc(docRef);
-    console.log(JSON.stringify(docSnap.data()));
+    //console.log(JSON.stringify(docSnap.data()));
     return Response.json(docSnap.data());
 }

@@ -13,12 +13,7 @@ export async function GET() {
 
     if (!session) console.log("There is no session");
 
-    const ID_doc = await getDoc(doc(db, "authID", session?.user.id));
-    
-    const uid = ID_doc.data().username;
-
-
-    const docRef = doc(db, "users", uid);
+    const docRef = doc(db, "users", session.user.username);
     const docSnap = await getDoc(docRef);
     if (!docSnap.exists()) throw new Error("failed");
     return Response.json(docSnap.data());

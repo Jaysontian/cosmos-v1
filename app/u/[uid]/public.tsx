@@ -20,7 +20,7 @@ export default function Public() {
   const pathname = usePathname();
 
   useEffect(() => {
-    getData(pathname).then((response) => {
+    getData(pathname).then((response : any) => {
       setData(response);
       setLoading(false);
     });

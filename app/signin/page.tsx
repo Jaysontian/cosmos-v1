@@ -19,17 +19,14 @@ export default async function signin() {
   if (!session) {
     return <SignInButton />;
     // redirect("/api/auth/signin?callbackUrl=/signin");
-  } else {
   }
 
-  console.log(session?.user.id);
   const docRef = doc(db, "authID", session?.user.id);
   const docSnap = await getDoc(docRef);
 
   if (docSnap.exists()) {
     // if the user exists, then load their page:
-
-    redirect(`/u/${docSnap.data().username}`);
+    redirect(`/u/${session?.user.username}`);
     //console.log("Document data:", docSnap.data().username);
   } else {
     return (

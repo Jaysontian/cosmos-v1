@@ -4,9 +4,13 @@
     background-color:rgb(28, 28, 28);
     border-radius:10px;
     box-shadow:2px 2px 12px 4px rgba(0, 0, 0, 0.076);
-    max-width:400px;
+    min-width:400px;
+    max-width:600px;
+    width:400px;
     margin:auto;
     padding:20px 15px;
+    /* resize: horizontal;
+    overflow: auto; */
 }
 
 .tracklist-con h2 {
