@@ -1,1 +1,7 @@
-{}
+{
+  "/u/[uid]/page": "app/u/[uid]/page.js",
+  "/api/user/data/route": "app/api/user/data/route.js",
+  "/api/helpers/proxy/route": "app/api/helpers/proxy/route.js",
+  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
+  "/api/auth/spotify/refresh_token/route": "app/api/auth/spotify/refresh_token/route.js"
+}
