@@ -1,4 +1,5 @@
 {
+  "/page": "app/page.js",
   "/u/[uid]/page": "app/u/[uid]/page.js",
   "/api/user/data/route": "app/api/user/data/route.js",
   "/api/helpers/proxy/route": "app/api/helpers/proxy/route.js",
