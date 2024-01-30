@@ -1,3 +1,1 @@
-What is nebulo?
-
-[Todo] Nothing
+# Cosmos v0.1
